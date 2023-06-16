@@ -1,0 +1,28 @@
+(1) neovim (learn how to use a text editor) 1 week
+	1.1 neovim keybindings
+	1.2 neovim configs
+
+(2) learn programming with python 2 months
+	python crash course
+	python automation cookbook
+
+(3) learn linux 2 months
+	linux system adminstration handbook
+	the linux command line
+
+(4) linux & python 1 month
+	python for unix and linux system admins
+(5) bash 1 month
+	the linux command line and shell scriping bible
+
+(6) networking 2 months
+	networking top to down approach
+
+(7) linux and networking 1 month	
+	linux networking
+
+(8) python and networking 2 months
+	python networking
+	black hat python
+
+
