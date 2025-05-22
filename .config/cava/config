@@ -1,0 +1,17 @@
+[input]
+
+method = pulse
+source = auto
+
+[output]
+data_format = ascii
+ascii_max_range = 9
+noise_reduction = 0.77
+bars = 20
+bar_spacing = 2
+
+[color]
+
+[smoothing]
+
+[eq]
