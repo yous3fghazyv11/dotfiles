@@ -39,6 +39,7 @@
   - [[#org-keybindings][Org keybindings]]
   - [[#org-appear][org-appear]]
 - [[#projectile][PROJECTILE]]
+- [[#git][Git]]
 - [[#dired][DIRED]]
 - [[#sudo-edit][SUDO EDIT]]
 - [[#which-key][WHICH-KEY]]
@@ -68,6 +69,7 @@
   - [[#yuck][yuck]]
   - [[#c-programming][C Programming]]
   - [[#folding][Folding]]
+  - [[#indent-guide][Indent guide]]
 
 * IMPORTANT PROGRAMS TO LOAD FIRST
 ** Elpaca Package Manager
@@ -669,20 +671,6 @@ Org-tempo is not a separate package but a module within org that can be enabled.
 (with-eval-after-load 'evil
   (evil-define-key 'normal org-mode-map (kbd "TAB") #'org-cycle) 
   (evil-define-key 'insert org-mode-map (kbd "TAB") #'org-cycle))
-
-(defun toggle-org-display ()
-  "Brute-force toggle of all display elements."
-  (interactive)
-  (when (eq major-mode 'org-mode)
-    ;; Toggle settings
-    (setq org-hide-emphasis-markers (not org-hide-emphasis-markers))
-    (setq org-link-descriptive (not org-link-descriptive))
-    
-    ;; Completely refresh display
-    (org-mode)
-    (org-mode)
-    (message "Display toggled")))
-(global-set-key (kbd "<f9>") 'toggle-org-display)
 #+end_src
 
 ** org-appear
@@ -697,6 +685,16 @@ Org-tempo is not a separate package but a module within org that can be enabled.
 (use-package projectile
   :config
   (projectile-mode 1))
+#+end_src
+
+* Git
+#+begin_src emacs-lisp
+(use-package transient)
+(use-package magit
+  :ensure t)
+(use-package git-gutter
+  :config
+  (global-git-gutter-mode +1))
 #+end_src
 
 * DIRED
@@ -1046,4 +1044,22 @@ Org-tempo is not a separate package but a module within org that can be enabled.
     (hs-toggle-hiding)))
 (with-eval-after-load 'evil
 (define-key evil-normal-state-map (kbd "zc") 'toggle-fold))
+#+end_src
+
+** Indent guide
+#+begin_src emacs-lisp
+(use-package highlight-indent-guides
+  :ensure t
+  :hook (prog-mode . highlight-indent-guides-mode)
+  :config
+  ;; Method 1: Use a visible face (gray lines)
+  (setq highlight-indent-guides-method 'fill)  ; Solid color bars
+
+  ;; OR Method 2: Use Unicode chars with foreground color
+  (setq highlight-indent-guides-method 'character)
+  (setq highlight-indent-guides-character ?│))  ; Unicode line (or ?┆, ?▏)
+
+(with-eval-after-load 'highlight-indent-guides
+    (set-face-background 'highlight-indent-guides-odd-face  "#000000") ; Dark gray
+  (set-face-background 'highlight-indent-guides-even-face "#000000")) ; Lighter gray
 #+end_src

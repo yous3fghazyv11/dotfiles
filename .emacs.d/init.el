@@ -9,9 +9,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(ef-dark))
  '(custom-safe-themes
-   '("1ad12cda71588cc82e74f1cabeed99705c6a60d23ee1bb355c293ba9c000d4ac"
+   '("ea4dd126d72d30805c083421a50544e235176d9698c8c541b824b60912275ba1"
+     "1ad12cda71588cc82e74f1cabeed99705c6a60d23ee1bb355c293ba9c000d4ac"
      default))
- '(package-selected-packages '(ef-themes evil rainbow-mode)))
+ '(package-selected-packages '(ef-themes evil magit nlinum rainbow-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

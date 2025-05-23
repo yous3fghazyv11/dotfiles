@@ -116,8 +116,8 @@ class PlayerManager:
         if (len(artist) > 10):
             artist = artist[:10] + "..."
         title = player.get_title()
-        if (len(title) > 20):
-            title = title[:20] + "..."
+        if (len(title) > 10):
+            title = title[:10] + "..."
 
         # Escape '&' in both artist and title
         if artist is not None:
